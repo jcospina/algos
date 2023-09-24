@@ -1,11 +1,8 @@
-interface StackNode<T> {
-    value: T;
-    next?: StackNode<T>;
-}
+import { ListNode } from './types';
 
 class Stack<T> {
     length: number;
-    private head?: StackNode<T>;
+    private head?: ListNode<T>;
 
     constructor() {
         this.length = 0;
@@ -14,7 +11,7 @@ class Stack<T> {
 
     push(item: T): void {
         this.length++;
-        const node: StackNode<T> = {
+        const node: ListNode<T> = {
             value: item 
         };
         if (!this.head) {

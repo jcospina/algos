@@ -1,12 +1,9 @@
-interface QueueNode<T> {
-    value: T;
-    next?: QueueNode<T>;
-}
+import { ListNode } from './types';
 
-class Queue<T> {
+export class Queue<T> {
     lenght: number;
-    private head?: QueueNode<T>;
-    private tail?: QueueNode<T>;
+    private head?: ListNode<T>;
+    private tail?: ListNode<T>;
 
     constructor() {
       this.head = this.tail = undefined;
@@ -14,6 +11,7 @@ class Queue<T> {
     }
 
     enqueue(item: T) {
+        this.lenght++;
         if (!this.tail) {
             this.head = this.createNode(item);
             this.tail = this.head;
@@ -21,8 +19,7 @@ class Queue<T> {
         }
         const newNode = this.createNode(item);
         this.tail.next = newNode;
-        this.tail = newNode;
-        this.lenght++;
+        this.tail = newNode;        
     }
 
     deque() : T | null {
@@ -42,18 +39,18 @@ class Queue<T> {
         return this.head?.value;
     }
 
-    private createNode(item:T): QueueNode<T> {
+    private createNode(item:T): ListNode<T> {
         return  {
             value: item
         };
     }
 }
 
-const myQ = new Queue();
+// const myQ = new Queue();
 
-myQ.enqueue(1)
-myQ.enqueue(2)
-myQ.enqueue(3)
-console.log(myQ.deque())
-console.log(myQ.deque())
-console.log(myQ.deque())
+// myQ.enqueue(1)
+// myQ.enqueue(2)
+// myQ.enqueue(3)
+// console.log(myQ.deque())
+// console.log(myQ.deque())
+// console.log(myQ.deque())
