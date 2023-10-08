@@ -32,7 +32,7 @@ const source = {
             value: 8
         }
     }
-}
+}  
 
 const target = {
     value: 1,

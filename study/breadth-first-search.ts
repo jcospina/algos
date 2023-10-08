@@ -1,4 +1,4 @@
-import { Queue } from './queue';
+import { Queue } from '../data structures/queue';
 import { BinaryNode } from './types';
 
 function bfs(tree: BinaryNode<number>, needle: number): boolean {
