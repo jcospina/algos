@@ -1,4 +1,4 @@
-import { BinaryNode } from './types';
+import { BinaryNode } from '../types/types';
 
 function dfs(node: BinaryNode<number>, needle: number): boolean {
     const stack = [] as BinaryNode<number>[];

@@ -1,4 +1,4 @@
-import { BinaryNode } from './types';
+import { BinaryNode } from '../types/types';
 
 function walk(node: BinaryNode<number> | undefined, path: number[]) {
     if (!node) {
